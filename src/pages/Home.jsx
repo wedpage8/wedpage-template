@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Countdown from '../components/Countdown/Countdown.jsx';
+import DressCode from '../components/DressCode/DressCode.jsx';
 import EventDetails from '../components/EventDetails/EventDetails.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import Gallery from '../components/Gallery/Gallery.jsx';
@@ -35,6 +36,7 @@ export default function Home() {
         <Countdown data={weddingData} />
         <Story data={weddingData} />
         <EventDetails data={weddingData} />
+        <DressCode data={weddingData} />
         <Gallery data={weddingData} />
         <Location data={weddingData} />
         <RSVP data={weddingData} />

@@ -1,10 +1,10 @@
 const weddingData = {
   brideName: 'Clara',
   groomName: 'James',
-  seoTitle: 'Clara & James | September 18, 2027',
-  seoDescription: 'Join Clara and James for a September wedding in Baguio City, Philippines.',
+  seoTitle: 'Clara & James | December 23, 2026',
+  seoDescription: 'Join Clara and James for a December wedding in Baguio City, Philippines.',
   tagline: 'A weekend of love, good food, and dancing.',
-  weddingDate: '2027-09-18T16:00:00+08:00',
+  weddingDate: '2026-12-23T16:00:00+08:00',
   venue: 'Baguio City Cathedral',
   address: 'Our Lady of Atonement Cathedral, Cathedral Loop, Baguio City, Benguet, Philippines',
   heroImage:
@@ -17,9 +17,20 @@ const weddingData = {
   navigation: [
     { label: 'Our story', href: '#story' },
     { label: 'The day', href: '#details' },
+    { label: 'Dress code', href: '#dress-code' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Find us', href: '#location' },
   ],
+  dressCode: {
+    attire: 'Cocktail attire',
+    note: 'For the cool Baguio evening, you may want to bring a light layer. We kindly invite you to wear any of these colors; please leave white and ivory for the couple.',
+    colors: [
+      { name: 'Sage', hex: '#A8BBA2' },
+      { name: 'Dusty blue', hex: '#9BAFC0' },
+      { name: 'Muted rose', hex: '#C99C98' },
+      { name: 'Warm taupe', hex: '#B5A28D' },
+    ],
+  },
   story: [
     {
       date: 'October 2019',
@@ -37,21 +48,21 @@ const weddingData = {
       date: 'December 2025',
       title: 'The easiest yes',
       description:
-        'On a snowy trail with our favorite view in sight, James asked the question. Clara said yes before he could finish asking it.',
+        'On a sunny trail with our favorite view in sight, James asked the question. Clara said yes before he could finish asking it.',
     },
   ],
   events: [
     {
       name: 'Ceremony',
       time: '4:00 in the afternoon',
-      date: 'Saturday, September 18',
+      date: 'Wednesday, December 23',
       detail: 'Please arrive by 3:30 PM',
       location: 'Baguio City Cathedral',
     },
     {
       name: 'Dinner & dancing',
       time: '5:30 in the evening',
-      date: 'Saturday, September 18',
+      date: 'Wednesday, December 23',
       detail: 'Cocktail attire, garden-friendly shoes',
       location: 'Camp John Hay, Baguio City',
     },
@@ -92,6 +103,9 @@ const weddingData = {
     storyHeading: 'A story still unfolding',
     detailsEyebrow: 'Save the date',
     detailsHeading: 'A day to remember',
+    dressCodeEyebrow: 'What to wear',
+    dressCodeHeading: 'A little guidance for the day',
+    dressCodePaletteLabel: 'Suggested colors',
     galleryEyebrow: 'A few favorite moments',
     galleryHeading: 'Life, lately',
     galleryPrevious: 'Previous photo',
@@ -105,7 +119,7 @@ const weddingData = {
     locationNote: 'More travel details will be shared with your invitation.',
     rsvpEyebrow: 'We hope you can make it',
     rsvpHeading: 'Be part of our day',
-    rsvpDescription: 'Kindly reply by August 18, 2027.',
+    rsvpDescription: 'Kindly reply by November 23, 2026.',
     rsvpNavCta: 'Kindly reply',
     rsvpNameLabel: 'Full name',
     rsvpAttendanceLabel: 'Will you be joining us?',
