@@ -13,7 +13,6 @@ const weddingData = {
   googleMapEmbedUrl:
     'https://maps.google.com/maps?q=Baguio%20City%20Cathedral%2C%20Baguio%20City%2C%20Philippines&z=16&output=embed',
   directionsUrl: 'https://maps.google.com/?q=Baguio+City+Cathedral,+Baguio+City,+Philippines',
-  rsvpLink: 'https://forms.google.com/',
   navigation: [
     { label: 'Our story', href: '#story' },
     { label: 'The day', href: '#details' },
@@ -106,7 +105,15 @@ const weddingData = {
     rsvpEyebrow: 'We hope you can make it',
     rsvpHeading: 'Be part of our day',
     rsvpDescription: 'Kindly reply by August 18, 2027.',
-    rsvpCta: 'Kindly reply',
+    rsvpNavCta: 'Kindly reply',
+    rsvpNameLabel: 'Full name',
+    rsvpAttendanceLabel: 'Will you be joining us?',
+    rsvpYes: 'Yes, I’ll be there',
+    rsvpNo: 'Sorry, I can’t make it',
+    rsvpCta: 'Submit RSVP',
+    rsvpPreviewNotice: 'This form is a preview and does not send or save responses yet.',
+    rsvpPreviewConfirmation: (name, attendance) =>
+      `Thanks, ${name}. You selected “${attendance}.” This preview does not send or save your response.`,
     newTab: 'Opens in a new tab',
     footerNote: 'Made with love, for the people we love.',
     backToTop: 'Back to top',

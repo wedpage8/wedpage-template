@@ -1,4 +1,4 @@
-import { FaArrowDown, FaArrowUpRightFromSquare } from 'react-icons/fa6';
+import { FaArrowDown } from 'react-icons/fa6';
 import styles from './Hero.module.css';
 
 function formatDate(date, locale) {
@@ -12,7 +12,7 @@ function formatDate(date, locale) {
 }
 
 export default function Hero({ data }) {
-  const { copy, brideName, groomName, tagline, weddingDate, venue, heroImage, heroImageAlt, navigation, rsvpLink } = data;
+  const { copy, brideName, groomName, tagline, weddingDate, venue, heroImage, heroImageAlt, navigation } = data;
 
   return (
     <header className={styles.hero} style={{ '--hero-image': `url("${heroImage}")` }}>
@@ -27,8 +27,8 @@ export default function Hero({ data }) {
             <a key={item.href} href={item.href}>{item.label}</a>
           ))}
         </div>
-        <a className={styles.navRsvp} href={rsvpLink} target="_blank" rel="noreferrer">
-          {copy.rsvpCta}<FaArrowUpRightFromSquare aria-hidden="true" />
+        <a className={styles.navRsvp} href="#rsvp">
+          {copy.rsvpNavCta}
         </a>
       </nav>
 
