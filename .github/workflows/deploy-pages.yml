@@ -30,6 +30,10 @@ jobs:
         run: npm ci
       - name: Build site
         run: npm run build
+      - name: Verify Pages build output
+        run: |
+          test -f dist/index.html
+          grep -q '"/wedpage-template/assets/' dist/index.html
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
