@@ -13,7 +13,7 @@ const weddingData = {
   googleMapEmbedUrl:
     'https://maps.google.com/maps?q=Baguio%20City%20Cathedral%2C%20Baguio%20City%2C%20Philippines&z=16&output=embed',
   directionsUrl: 'https://maps.google.com/?q=Baguio+City+Cathedral,+Baguio+City,+Philippines',
-  rsvpEmailEndpoint: 'https://formsubmit.co/ajax/9fb5ee64e59084d0dc644dec585fc4f',
+  rsvpEmailEndpoint: 'https://formsubmit.co/ajax/wedpage8@gmail.com',
   navigation: [
     { label: 'Our story', href: '#story' },
     { label: 'The day', href: '#details' },
