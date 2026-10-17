@@ -53,7 +53,7 @@ const weddingData = {
       time: '5:30 in the evening',
       date: 'Saturday, September 18',
       detail: 'Cocktail attire, garden-friendly shoes',
-      location: 'Baguio City Cathedral',
+      location: 'Camp John Hay, Baguio City',
     },
   ],
   gallery: [

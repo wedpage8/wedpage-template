@@ -2,7 +2,7 @@ import { FaRegClock } from 'react-icons/fa6';
 import styles from './EventDetails.module.css';
 
 export default function EventDetails({ data }) {
-  const { events, weddingDate, venue, address, copy } = data;
+  const { events, weddingDate, address, copy } = data;
 
   return (
     <section className={styles.section} id="details" aria-labelledby="details-heading">
@@ -17,7 +17,7 @@ export default function EventDetails({ data }) {
             <h3>{event.name}</h3>
             <p className={styles.eventDate}><time dateTime={weddingDate}>{event.date}</time></p>
             <p className={styles.eventTime}><FaRegClock aria-hidden="true" />{event.time}</p>
-            <p>{event.location === venue ? venue : <>{event.location}<br />{venue}</>}</p>
+            <p>{event.location}</p>
             <p className={styles.note}>{event.detail}</p>
           </article>
         ))}
