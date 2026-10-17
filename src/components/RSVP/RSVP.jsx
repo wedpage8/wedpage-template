@@ -36,8 +36,10 @@ export default function RSVP({ data }) {
         },
         body: JSON.stringify({
           name,
-          attendance: attendanceValue === 'yes' ? 'Attending' : 'Unable to attend',
+          attendance,
+          message: `Attendance: ${attendance}`,
           _subject: `Wedding RSVP: ${name}`,
+          _template: 'table',
           _honey: '',
         }),
       });
