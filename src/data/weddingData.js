@@ -58,28 +58,28 @@ const weddingData = {
   ],
   gallery: [
     {
-      src: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1100&q=85',
-      alt: 'A couple sharing a quiet moment outdoors',
+      src: 'https://images.unsplash.com/photo-1732147124876-669f11fecd14?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+      alt: 'A couple standing together in a field of tall grass',
       shape: 'portrait',
     },
     {
-      src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1100&q=85',
-      alt: 'Wedding guests celebrating together',
+      src: 'https://images.unsplash.com/photo-1790220324516-e97a2c7236fd?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+      alt: 'A couple dancing in a park near a green bridge',
       shape: 'landscape',
     },
     {
-      src: 'https://images.unsplash.com/photo-1519225421980-888cbf8a5b1b?auto=format&fit=crop&w=1100&q=85',
-      alt: 'Elegant wedding table details with flowers and candles',
+      src: 'https://images.unsplash.com/photo-1739249949379-19fc0c9799a1?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+      alt: 'A couple holding hands outdoors',
       shape: 'portrait',
     },
     {
-      src: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1100&q=85',
-      alt: 'A joyful wedding celebration in the evening',
+      src: 'https://images.unsplash.com/photo-1762799585016-4d77970a885a?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+      alt: 'A couple embracing outdoors at sunset',
       shape: 'landscape',
     },
     {
-      src: 'https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1100&q=85',
-      alt: 'A close-up of a wedding bouquet',
+      src: 'https://images.unsplash.com/photo-1776458026414-8b84103bf315?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+      alt: 'A couple embracing with mountains behind them',
       shape: 'portrait',
     },
   ],
