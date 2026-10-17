@@ -17,7 +17,11 @@
 .button:hover { background: #465346; transform: translateY(-2px); }
 .button svg { color: #e5d3a2; }
 .notice { margin: 2px 0 0; color: var(--color-muted); font-size: 11px; line-height: 1.5; }
-.confirmation { min-height: 1.5em; margin: 0; color: var(--color-sage-deep); font-size: 12px; line-height: 1.5; }
+.dialog { width: min(calc(100% - 32px), 440px); padding: 30px; border: 1px solid var(--color-line); color: var(--color-ink); background: var(--color-paper); box-shadow: 0 20px 70px rgb(25 31 26 / 25%); }
+.dialog::backdrop { background: rgb(25 31 26 / 58%); }
+.dialog h3 { margin: 0 0 12px; font-family: var(--font-display); font-size: 30px; font-weight: 400; }
+.confirmation { margin: 0; color: var(--color-muted); font-size: 13px; line-height: 1.6; }
+.dialog .button { margin-top: 24px; }
 .names { position: absolute; right: 26px; bottom: 18px; margin: 0; color: rgb(53 61 51 / 32%); font-family: var(--font-display); font-size: 15px; }
 .names span { color: #a58b50; font-style: italic; }
 

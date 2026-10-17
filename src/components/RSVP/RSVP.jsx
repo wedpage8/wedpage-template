@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
 import styles from './RSVP.module.css';
 
 export default function RSVP({ data }) {
   const { copy, brideName, groomName } = data;
+  const dialogRef = useRef(null);
   const [confirmation, setConfirmation] = useState('');
 
   function handleSubmit(event) {
@@ -13,6 +14,7 @@ export default function RSVP({ data }) {
     const attendance = formData.get('attendance') === 'yes' ? copy.rsvpYes : copy.rsvpNo;
 
     setConfirmation(copy.rsvpPreviewConfirmation(name, attendance));
+    dialogRef.current?.showModal();
   }
 
   return (
@@ -47,10 +49,16 @@ export default function RSVP({ data }) {
             {copy.rsvpCta}<FaArrowRight aria-hidden="true" />
           </button>
           <p className={styles.notice}>{copy.rsvpPreviewNotice}</p>
-          <p className={styles.confirmation} role="status" aria-live="polite">{confirmation}</p>
         </form>
       </div>
       <p className={styles.names} aria-hidden="true">{brideName} <span>&</span> {groomName}</p>
+      <dialog className={styles.dialog} ref={dialogRef} aria-labelledby="rsvp-dialog-heading">
+        <h3 id="rsvp-dialog-heading">{copy.rsvpDialogHeading}</h3>
+        <p className={styles.confirmation} role="status">{confirmation}</p>
+        <button className={styles.button} type="button" onClick={() => dialogRef.current?.close()}>
+          {copy.rsvpDialogClose}
+        </button>
+      </dialog>
     </section>
   );
 }

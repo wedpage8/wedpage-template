@@ -59,27 +59,22 @@ const weddingData = {
     {
       src: 'https://images.unsplash.com/photo-1732147124876-669f11fecd14?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       alt: 'A couple standing together in a field of tall grass',
-      shape: 'portrait',
     },
     {
       src: 'https://images.unsplash.com/photo-1790220324516-e97a2c7236fd?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       alt: 'A couple dancing in a park near a green bridge',
-      shape: 'landscape',
     },
     {
       src: 'https://images.unsplash.com/photo-1739249949379-19fc0c9799a1?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       alt: 'A couple holding hands outdoors',
-      shape: 'portrait',
     },
     {
       src: 'https://images.unsplash.com/photo-1762799585016-4d77970a885a?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       alt: 'A couple embracing outdoors at sunset',
-      shape: 'landscape',
     },
     {
       src: 'https://images.unsplash.com/photo-1776458026414-8b84103bf315?fm=jpg&q=60&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       alt: 'A couple embracing with mountains behind them',
-      shape: 'portrait',
     },
   ],
   copy: {
@@ -98,6 +93,11 @@ const weddingData = {
     detailsHeading: 'A day to remember',
     galleryEyebrow: 'A few favorite moments',
     galleryHeading: 'Life, lately',
+    galleryPrevious: 'Previous photo',
+    galleryNext: 'Next photo',
+    galleryGoToSlide: 'Go to photo',
+    gallerySlideNavigation: 'Choose a gallery photo',
+    gallerySlideOf: 'of',
     locationEyebrow: 'We saved you a seat',
     locationHeading: 'Meet us in Baguio City',
     directions: 'Get directions',
@@ -114,6 +114,8 @@ const weddingData = {
     rsvpPreviewNotice: 'This form is a preview and does not send or save responses yet.',
     rsvpPreviewConfirmation: (name, attendance) =>
       `Thanks, ${name}. You selected “${attendance}.” This preview does not send or save your response.`,
+    rsvpDialogHeading: 'RSVP form submitted',
+    rsvpDialogClose: 'Close',
     newTab: 'Opens in a new tab',
     footerNote: 'Made with love, for the people we love.',
     backToTop: 'Back to top',
