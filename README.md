@@ -13,9 +13,13 @@ Create a production build with `npm run build`, then preview it with `npm run pr
 
 ## Customize
 
-Edit `src/data/weddingData.js` to set the couple, date, story, event details, gallery images, map embed, and Google Forms RSVP URL. Images currently use Unsplash image URLs; replace them with approved client imagery for production.
+Edit `src/data/weddingData.js` to set the couple, date, story, event details, gallery images, map embed, and RSVP email endpoint. Images currently use Unsplash image URLs; replace them with approved client imagery for production.
 
 The app is a static frontend with no backend. It can be deployed to Vercel by importing the GitHub repository, using `npm run build` as the build command, and `dist` as the output directory.
+
+## RSVP email delivery
+
+RSVP submissions send the guest's name and attendance choice to the FormSubmit endpoint configured in `src/data/weddingData.js`. Before replies can be delivered, the recipient must submit the form once and confirm the activation email sent by FormSubmit. FormSubmit is a third-party service and processes the submitted RSVP details.
 
 ## Deploy to GitHub Pages
 

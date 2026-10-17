@@ -6,15 +6,70 @@ export default function RSVP({ data }) {
   const { copy, brideName, groomName } = data;
   const dialogRef = useRef(null);
   const [confirmation, setConfirmation] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = formData.get('fullName').trim();
-    const attendance = formData.get('attendance') === 'yes' ? copy.rsvpYes : copy.rsvpNo;
+    const attendanceValue = formData.get('attendance');
+    const attendance = attendanceValue === 'yes' ? copy.rsvpYes : copy.rsvpNo;
 
-    setConfirmation(copy.rsvpPreviewConfirmation(name, attendance));
-    dialogRef.current?.showModal();
+    if (!name) {
+      setErrorMessage(copy.rsvpNameRequired);
+      form.elements.fullName.focus();
+      return;
+    }
+
+    setErrorMessage('');
+    setConfirmation('');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(data.rsvpEmailEndpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          attendance: attendanceValue === 'yes' ? 'Attending' : 'Unable to attend',
+          _subject: `Wedding RSVP: ${name}`,
+          _honey: '',
+        }),
+      });
+
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        setErrorMessage(copy.rsvpSubmitError);
+        return;
+      }
+
+      const needsActivation =
+        typeof result.message === 'string' && /activat/i.test(result.message);
+      if (needsActivation) {
+        setErrorMessage(copy.rsvpActivationNotice);
+        return;
+      }
+
+      if (!response.ok || (result.success !== true && result.success !== 'true')) {
+        setErrorMessage(copy.rsvpSubmitError);
+        return;
+      }
+
+      setConfirmation(copy.rsvpDialogSuccess(name, attendance));
+      form.reset();
+      dialogRef.current?.showModal();
+    } catch {
+      setErrorMessage(copy.rsvpSubmitError);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -23,7 +78,7 @@ export default function RSVP({ data }) {
         <p className="eyebrow">{copy.rsvpEyebrow}</p>
         <h2 id="rsvp-heading">{copy.rsvpHeading}</h2>
         <p>{copy.rsvpDescription}</p>
-        <form className={styles.form} onSubmit={handleSubmit} onChange={() => setConfirmation('')}>
+        <form className={styles.form} onSubmit={handleSubmit} onChange={() => setErrorMessage('')}>
           <label className={styles.fieldLabel} htmlFor="rsvp-full-name">{copy.rsvpNameLabel}</label>
           <input
             className={styles.nameInput}
@@ -45,10 +100,11 @@ export default function RSVP({ data }) {
               <span>{copy.rsvpNo}</span>
             </label>
           </fieldset>
-          <button className={styles.button} type="submit">
-            {copy.rsvpCta}<FaArrowRight aria-hidden="true" />
+          <button className={styles.button} type="submit" disabled={isSubmitting}>
+            {isSubmitting ? copy.rsvpSubmitting : copy.rsvpCta}
+            {!isSubmitting && <FaArrowRight aria-hidden="true" />}
           </button>
-          <p className={styles.notice}>{copy.rsvpPreviewNotice}</p>
+          {errorMessage && <p className={styles.error} role="alert">{errorMessage}</p>}
         </form>
       </div>
       <p className={styles.names} aria-hidden="true">{brideName} <span>&</span> {groomName}</p>

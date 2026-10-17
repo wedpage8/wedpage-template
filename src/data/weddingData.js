@@ -13,6 +13,7 @@ const weddingData = {
   googleMapEmbedUrl:
     'https://maps.google.com/maps?q=Baguio%20City%20Cathedral%2C%20Baguio%20City%2C%20Philippines&z=16&output=embed',
   directionsUrl: 'https://maps.google.com/?q=Baguio+City+Cathedral,+Baguio+City,+Philippines',
+  rsvpEmailEndpoint: 'https://formsubmit.co/ajax/wedpage8@gmail.com',
   navigation: [
     { label: 'Our story', href: '#story' },
     { label: 'The day', href: '#details' },
@@ -111,10 +112,14 @@ const weddingData = {
     rsvpYes: 'Yes, I’ll be there',
     rsvpNo: 'Sorry, I can’t make it',
     rsvpCta: 'Submit RSVP',
-    rsvpPreviewNotice: 'This form is a preview and does not send or save responses yet.',
-    rsvpPreviewConfirmation: (name, attendance) =>
-      `Thanks, ${name}. You selected “${attendance}.” This preview does not send or save your response.`,
-    rsvpDialogHeading: 'RSVP form submitted',
+    rsvpSubmitting: 'Sending RSVP…',
+    rsvpNameRequired: 'Please enter your full name.',
+    rsvpSubmitError: 'We could not send your RSVP. Please try again.',
+    rsvpActivationNotice:
+      'The RSVP email service needs to be activated. Please check wedpage8@gmail.com for its verification email, then try again.',
+    rsvpDialogHeading: 'RSVP submitted',
+    rsvpDialogSuccess: (name, attendance) =>
+      `Thank you, ${name}. Your RSVP was submitted: ${attendance}.`,
     rsvpDialogClose: 'Close',
     newTab: 'Opens in a new tab',
     footerNote: 'Made with love, for the people we love.',
