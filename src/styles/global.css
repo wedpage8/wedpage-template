@@ -1,0 +1,37 @@
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #333831;
+  background: #f8f4ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --color-paper: #f8f4ec;
+  --color-ink: #333831;
+  --color-muted: #71736a;
+  --color-gold: #d4af37;
+  --color-sage: #a8bba2;
+  --color-sage-deep: #647762;
+  --color-line: #d9d8cd;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { min-width: 320px; margin: 0; }
+body, button, a { font-family: var(--font-body); }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 2px solid #a18436; outline-offset: 4px; }
+::selection { color: #fffdf8; background: #647762; }
+.eyebrow { margin: 0; color: var(--color-sage-deep); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.skip-link { position: fixed; z-index: 10; top: 12px; left: 12px; padding: 12px 16px; transform: translateY(-150%); color: #fff; background: #333831; }
+.skip-link:focus { transform: translateY(0); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
