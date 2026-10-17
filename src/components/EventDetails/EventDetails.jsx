@@ -17,7 +17,7 @@ export default function EventDetails({ data }) {
             <h3>{event.name}</h3>
             <p className={styles.eventDate}><time dateTime={weddingDate}>{event.date}</time></p>
             <p className={styles.eventTime}><FaRegClock aria-hidden="true" />{event.time}</p>
-            <p>{event.location}<br />{venue}</p>
+            <p>{event.location === venue ? venue : <>{event.location}<br />{venue}</>}</p>
             <p className={styles.note}>{event.detail}</p>
           </article>
         ))}
