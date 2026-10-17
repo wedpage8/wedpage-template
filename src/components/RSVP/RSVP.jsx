@@ -48,7 +48,7 @@ export default function RSVP({ data }) {
       try {
         result = await response.json();
       } catch {
-        setErrorMessage(copy.rsvpSubmitError);
+        setErrorMessage(`${copy.rsvpSubmitError} (HTTP ${response.status})`);
         return;
       }
 
@@ -60,14 +60,25 @@ export default function RSVP({ data }) {
       }
 
       if (!response.ok || (result.success !== true && result.success !== 'true')) {
-        setErrorMessage(copy.rsvpSubmitError);
+        const providerMessage =
+          typeof result.message === 'string' ? result.message.trim().slice(0, 200) : '';
+        console.error('FormSubmit rejected the RSVP', {
+          status: response.status,
+          message: providerMessage || undefined,
+        });
+        setErrorMessage(
+          providerMessage
+            ? `${copy.rsvpSubmitError} ${providerMessage}`
+            : `${copy.rsvpSubmitError} (HTTP ${response.status})`,
+        );
         return;
       }
 
       setConfirmation(copy.rsvpDialogSuccess(name, attendance));
       form.reset();
       dialogRef.current?.showModal();
-    } catch {
+    } catch (error) {
+      console.error('Could not reach FormSubmit to send the RSVP', error);
       setErrorMessage(copy.rsvpSubmitError);
     } finally {
       setIsSubmitting(false);
